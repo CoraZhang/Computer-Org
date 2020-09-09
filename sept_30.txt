@@ -1,0 +1,29 @@
+module caseexample(SW, LEDR);
+
+	input [9:0]  SW;
+	output [9:0] LEDR;
+	
+	wire [3:0] A;
+	wire [3:0] B;
+	wire [1:0] muxselect;
+	
+	reg [3:0] muxout; // any signal assigned in an always block has this type
+	
+	assign A = SW[3:0];
+	assign B = SW[7:4];
+	assign muxselect = SW[9:8];
+	
+	assign LEDR[3:0] = muxout;
+	
+	always@(*) // circuitry described within is memoryless and may react to any input change
+	begin
+		case(muxselect)
+			2'b00: muxout = A | B;
+			2'b01: muxout = A ^ B;
+			2'b10: muxout = A & B;
+			2'b11: muxout = ~A;
+			default: muxout = 4'bXXXX;
+		endcase	
+	end
+
+endmodule

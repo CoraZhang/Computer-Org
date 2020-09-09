@@ -1,0 +1,49 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/singalan/ECE244/Lab3/PartI
+vLab3PartI
+Z1 !s110 1475185023
+!i10b 1
+!s100 ecznnMd=TV^AbPcOhk:Xl2
+IS6f8Q92_31cRfPkYE:Vh73
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1475184023
+Z4 8Lab3PartI.v
+Z5 FLab3PartI.v
+L0 3
+Z6 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z7 !s108 1475185023.000000
+Z8 !s107 Lab3PartI.v|
+Z9 !s90 -reportprogress|300|Lab3PartI.v|
+!i113 1
+n@lab3@part@i
+vmux7to1
+R1
+!i10b 1
+!s100 Tg@?;@SOfliUDBGG_;<7i3
+IHjOHz41WmRlU^6Q:UXe0N1
+R2
+R0
+R3
+R4
+R5
+L0 23
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1

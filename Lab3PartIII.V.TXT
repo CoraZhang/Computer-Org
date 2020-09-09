@@ -1,0 +1,49 @@
+`timescale 1ns / 1ns // `timescale time_unit/time_precision
+
+module Lab3PartIII(LEDR, SW, HEX0, KEY);
+	input [9:0] SW;
+	input [2:0] KEY;
+	output [9:0] LEDR;
+	output [6:0] HEX0;
+	
+	ALU inst1(
+		.A(SW[7:4]),
+		.B(SW[3:0]),
+		.Key(KEY[2:0]),
+		.ALUout(LEDR[7:0])
+		);		
+		
+endmodule
+
+module ALU(A, B, Key, ALUout);
+	input A,B,Key;
+	output ALUout;
+	
+	reg Out;
+	
+	always @(*)
+	begin
+		case (Key)
+			//3'b000: Out = 
+			3'b001: Out = A + B;
+			default: Out = 0;
+		endcase
+	end
+	
+	
+	//assign SW[7:4] = a;
+	//assign SW[3:0] = b;
+	//assign ALUout = Out;
+	//assign LEDR[7:0] = ALUout;
+	//assign HEX0[1]= 0;
+	assign ALUout = Out;
+	
+endmodule
+
+
+	 
+	
+	
+	
+	
+	

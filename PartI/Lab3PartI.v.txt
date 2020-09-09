@@ -1,0 +1,45 @@
+`timescale 1ns / 1ns // `timescale time_unit/time_precision
+
+module Lab3PartI(LEDR, SW);
+	input [9:0] SW;
+	output [9:0] LEDR;
+	
+	mux7to1 u0(
+		.a(SW[0]),
+		.b(SW[1]),
+		.c(SW[2]),
+		.d(SW[3]),
+		.e(SW[4]),
+		.f(SW[5]),
+		.g(SW[6]),
+		.s(SW[9]),
+		.m(SW[8]),
+		.n(SW[7]),
+		.z(LEDR[0])
+		);
+	
+endmodule
+
+module mux7to1(a,b,c,d,e,f,g, s,m,n, z);
+	input a,b,c,d,e,f,g, s,m,n;
+	output z;
+	
+	reg Out;
+	
+	always @(*)
+	begin
+		case ({s,m,n}) // start case statement if any of these values are modified
+			3'b000: Out = a; // case0
+			3'b001: Out = b; // case1
+			3'b010: Out = c; // case2
+			3'b011: Out = d; // case3
+			3'b100: Out = e; // case4
+			3'b101: Out = f; // case5
+			3'b110: Out = g; // case6
+			default: Out = 0; // set to 0 if none of above values are detected
+		endcase
+	end
+	
+	assign z = Out;
+	
+endmodule
